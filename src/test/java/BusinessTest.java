@@ -7,7 +7,7 @@ class BusinessTest {
     @Test
     void getLastLinesOfInvoiceForSmallBusiness () {
 
-        Business business = new Business (Business.SMALL);
+        Business business = new BusinessSmall ();
         String expectedValue = "=                                                         ---------- + =\r\n" +
                                "=                                               Totaal    €   100,00   =\r\n" +
                                "=                                                                      =\r\n" +
@@ -19,7 +19,7 @@ class BusinessTest {
 
     @Test
     void getLastLinesOfInvoiceForNormalBusiness () {
-        Business business = new Business (Business.NORMAL);
+        Business business = new BusinessNormal ();
         String expectedValue = "=                                                         ---------- + =\r\n" +
                                "=                                               Subtotaal €   100,00   =\r\n" +
                                "=                                               21% BTW   €    21,00   =\r\n" +
