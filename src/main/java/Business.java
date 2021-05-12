@@ -26,18 +26,18 @@ public class Business {
             double vat = getVAT (priceExcludingVAT);
             double priceIncludingVAT = getPriceIncludingVAT (priceExcludingVAT);
 
-            lines.append (InvoiceFormatter.getLine (true, "----------+"));
-            lines.append (InvoiceFormatter.getLine (true, "Subtotaal € %8.2f ", priceExcludingVAT));
-            lines.append (InvoiceFormatter.getLine (true, "21%% BTW   € %8.2f ", vat));
-            lines.append (InvoiceFormatter.getLine (true, "----------+"));
-            lines.append (InvoiceFormatter.getLine (true, "Totaal    € %8.2f ", priceIncludingVAT));
+            lines.append (InvoiceFormatter.getLine (true, "---------- +"));
+            lines.append (InvoiceFormatter.getLine (true, "Subtotaal € %8.2f  ", priceExcludingVAT));
+            lines.append (InvoiceFormatter.getLine (true, "21%% BTW   € %8.2f  ", vat));
+            lines.append (InvoiceFormatter.getLine (true, "---------- +"));
+            lines.append (InvoiceFormatter.getLine (true, "Totaal    € %8.2f  ", priceIncludingVAT));
             return lines.toString ();
         }
         else { // type = NORMAL
             lines.append (InvoiceFormatter.getLine (true, "----------+"));
-            lines.append (InvoiceFormatter.getLine (true, "Totaal    € %8.2f ", priceExcludingVAT));
+            lines.append (InvoiceFormatter.getLine (true, "Totaal    € %8.2f  ", priceExcludingVAT));
             lines.append (InvoiceFormatter.getEmptyLine ());
-            lines.append (InvoiceFormatter.getLine (true, "Factuur is vrijgesteld van OB o.g.v. artikel 25 Wet OB "));
+            lines.append (InvoiceFormatter.getLine (true, "Factuur is vrijgesteld van OB o.g.v. artikel 25 Wet OB  "));
             return lines.toString();
         }
     }

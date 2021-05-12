@@ -7,7 +7,8 @@ public class Main {
         ArrayList <InvoiceLine> lines = new ArrayList<> ();
         lines.add (new InvoiceLine (2, new Product ("Testproduct 1", 22.0)));
         lines.add (new InvoiceLine (1000, new Product ("Testproduct 2", 0.018)));
-        new Invoice ().printInvoice (customer, lines);
+        new Invoice (new Business (Business.SMALL)).printInvoice (customer, lines);
         System.out.println ();
+        new Invoice (new Business (Business.NORMAL)).printInvoice (customer, lines);
     }
 }
